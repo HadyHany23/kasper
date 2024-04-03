@@ -1,6 +1,7 @@
 /* Start Variables */
 :root {
     --main-color: #19c8fa;
+    --transparent-color: rgba(15 116 143 / 70%);
 }
 
 /* End Variables */
@@ -20,7 +21,7 @@ html {
 
 body {
     font-family: "Open Sans", sans-serif;
-    background-color: black;
+    background-color: burlywood;
 }
 
 ul {
@@ -97,6 +98,7 @@ header nav {
 header nav .toggle-menu {
     color: white;
     font-size: 15px;
+    cursor: pointer;
 }
 
 @media (min-width:768px) {
@@ -122,7 +124,7 @@ header nav ul {
         top: 100%;
         left: 0;
         width: 100%;
-        background-color: rgb(0, 0, 0 / 50%);
+        background-color: rgba(0 0 0 / 50%);
     }
 
     header nav ul li a {
@@ -147,12 +149,17 @@ header nav ul li a:hover {
     border-bottom: 1px solid var(--main-color);
 }
 
+header nav ul li a:hover {
+    transform: scale(1.5);
+}
+
 header nav .form {
     width: 40px;
     height: 30px;
     position: relative;
     margin-left: 30px;
     border-left: 1px solid white;
+    cursor: pointer;
 }
 
 header nav .form i {
@@ -165,3 +172,109 @@ header nav .form i {
 }
 
 /* End Header  */
+
+/* Start Landing */
+
+.landing {
+    min-height: 100vh;
+    background-color: var(--main-color);
+    background-image: url(../Images/landing.webp);
+    background-size: cover;
+}
+
+.landing .overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0 0 0 / 30%);
+}
+
+.landing .text {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50%;
+    padding: 50px;
+    background-color: var(--transparent-color);
+    color: white;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.landing .text .content {
+    max-width: 90%;
+}
+
+@media (max-width:767px) {
+    .landing .text {
+        width: 100%;
+    }
+
+    .landing .text .content {
+        max-width: 100%;
+    }
+}
+
+.landing .text .content h2 {
+    font-size: 30px;
+    font-weight: normal;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.landing .text .content p {
+    font-size: 14px;
+    line-height: 2;
+}
+
+.landing .change-background {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+}
+
+@media (max-width:767px) {
+    .landing .change-background {
+        display: none;
+    }
+}
+
+.landing .fa-angle-left {
+    left: 2%;
+}
+
+.landing .fa-angle-right {
+    right: 2%;
+}
+
+.landing .bullets {
+    position: absolute;
+    left: 50%;
+    transform: translateY(50%);
+    bottom: 2%;
+    display: flex;
+}
+
+.landing .bullets li {
+    width: 20px;
+    height: 20px;
+    border: 1px solid white;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.landing .bullets li:hover {
+    background-color: var(--main-color);
+    transform: scale(1.5);
+}
+
+.landing .bullets li.active {
+    background-color: var(--main-color);
+    border-color: var(--main-color);
+}
+
+/* End Landing */
