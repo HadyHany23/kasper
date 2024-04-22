@@ -3,6 +3,26 @@
     --main-color: #19c8fa;
     --transparent-color: rgba(15 116 143 / 90%);
     --section-padding: 100px;
+    --secondary-color: white;
+}
+
+::selection {
+    color: var(--secondary-color);
+    background-color: var(--main-color);
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: var(--secondary-color, #333);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--main-color, #eee);
 }
 
 /* End Variables */
